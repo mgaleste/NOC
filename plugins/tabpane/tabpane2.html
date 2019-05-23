@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+<title>Tab Pane (WebFX)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script type="text/javascript" src="local/webfxlayout.js"></script>
+<script type="text/javascript" src="local/webfxapi.js"></script>
+<script type="text/javascript" src="js/tabpane.js"></script>
+<link type="text/css" rel="StyleSheet" href="css/tab.webfx.css" />
+
+<style type="text/css">
+
+.dynamic-tab-pane-control .tab-page {
+	height:		500px;
+	width:		558px;
+	overflow:	auto;
+}
+
+.dynamic-tab-pane-control .tab-page .dynamic-tab-pane-control .tab-page {
+	height:		100px;
+}
+
+form {
+	margin:		0;
+	padding:	0;
+}
+
+/* over ride styles from webfxlayout */
+
+.dynamic-tab-pane-control.tab-pane {
+	margin:	10px;
+	width:	580px;
+}
+
+.dynamic-tab-pane-control h2 {
+	text-align:	center;
+	width:		auto;
+}
+
+.dynamic-tab-pane-control h2 a {
+	display:	inline;
+	width:		auto;
+}
+
+.dynamic-tab-pane-control a:hover {
+	background: transparent;
+}
+
+.dynamic-tab-pane-control .tab-page h2 {
+	text-align:	left;
+}
+
+</style>
+
+<script type="text/javascript">
+//<![CDATA[
+
+var tabPane;
+
+function showArticleTab( sName ) {
+	if (typeof tabPane != "undefined" ) {
+
+		switch ( sName ) {
+
+			case "main":
+				tabPane.setSelectedIndex( 0 );
+				break;
+
+			case "usage":
+				tabPane.setSelectedIndex( 1 );
+				break;
+
+			case "api":
+				tabPane.setSelectedIndex( 2 );
+				break;
+
+			case "implementation":
+				tabPane.setSelectedIndex( 3 );
+				break;
+
+			case "looknfeel":
+				tabPane.setSelectedIndex( 4 );
+				break;
+		}
+	}
+}
+
+// help tips
+htDom = "Document Object Model 1 is a standard developed by the W3C.<br />" +
+		"<a href=\"http://www.w3.org/DOM/\" target=\"_blank\">http://www.w3.org/DOM/</a>";
+
+//]]>
+</script>
+
+</head>
+<body>
+<!-- WebFX Layout Include -->
+<script type="text/javascript">
+
+var articleMenu= new WebFXMenu;
+articleMenu.left  = 384;
+articleMenu.top   = 86;
+articleMenu.width = 140;
+articleMenu.add(new WebFXMenuItem("Tab Pane", "javascript:showArticleTab( \"main\" )"));
+articleMenu.add(new WebFXMenuItem("Usage", "javascript:showArticleTab( \"usage\" )"));
+articleMenu.add(new WebFXMenuItem("API", "javascript:showArticleTab( \"api\" )"));
+articleMenu.add(new WebFXMenuItem("Implementation", "javascript:showArticleTab( \"implementation\" )"));
+articleMenu.add(new WebFXMenuItem("Look &amp; Feel", "javascript:showArticleTab( \"looknfeel\" )"));
+articleMenu.add(new WebFXMenuItem("Demo", "demo.html"));
+articleMenu.add(new WebFXMenuSeparator);
+articleMenu.add(new WebFXMenuItem("Download", "http://webfx.eae.net/download/tabpane102.zip"));
+webfxMenuBar.add(new WebFXMenuButton("Article Menu", null, null, articleMenu));
+
+webfxLayout.writeTitle("Tab Pane");
+webfxLayout.writeMenu();
+webfxLayout.writeDesignedByEdger();
+
+</script>
+
+<div class="webfx-main-body">
+ 
+
+<!-- begin tab pane -->
+<div class="tab-pane" id="article-tab">
+
+<script type="text/javascript">
+tabPane = new WebFXTabPane( document.getElementById( "article-tab" ), true );
+</script>
+
+
+
+<!-- begin intro page -->
+<div class="tab-page" id="intro-page">
+<h2 class="tab">Introduction</h2>
+
+<script type="text/javascript">
+tabPane.addTabPage( document.getElementById( "intro-page" ) );
+</script>
+ 
+
+</div>
+<!-- end intro page -->
+
+
+
+
+<!-- begin usage page -->
+<div class="tab-page" id="usage-page">
+<h2 class="tab">Usage</h2>
+
+<script type="text/javascript">
+tabPane.addTabPage( document.getElementById( "usage-page" ) );
+</script>
+ 
+</div>
+<!-- end usage tab -->
+
+
+
+
+
+<!-- begin api tab -->
+<div class="tab-page" id="api-page">
+<h2 class="tab">API</h2>
+
+<script type="text/javascript">
+tabPane.addTabPage( document.getElementById( "api-page" ) );
+</script>
+
+<!--
+Generated using api.xsl version 20020217
+-->
+   
+
+</div>
+<!-- end api tab -->
+
+
+
+
+
+
+
+
+<!-- begin implementation tab -->
+<div class="tab-page" id="implementation-page">
+<h2 class="tab">Implementation</h2>
+
+<script type="text/javascript">
+tabPane.addTabPage( document.getElementById( "implementation-page" ) );
+</script>
+ 
+
+</div>
+<!-- end implementation tab -->
+ 
+<!-- begin look and feel tab -->
+<div class="tab-page" id="look-page">
+<h2 class="tab">Look &amp; Feel</h2>
+
+<script type="text/javascript">
+tabPane.addTabPage( document.getElementById( "look-page" ) );
+</script>
+
+   
+
+
+</div>
+<!-- end look and feel tab -->
+
+
+</div>
+<!-- end tab pane -->
+ 
+
+<!-- end webfx-main-body -->
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,11 @@
+Overwrite the contents of the extracted NOC folder inside the NOC folder in the xampp/htdocs directory
+
+for php.ini, included in the extracted file the updated settings from your laptop, replcae to all php.ini inside the xampp directory
+
+For the database
+in PhpMyAdmin
+Drop the database NOC
+Recreate the database NOC with collation latin1_swedish_ci
+Import the given NOC.sql
+
+change the database password in the file model/dbconfig.php, change the value inside the single quotes if(!defined("W_PASSWORD")){define("W_PASSWORD", 'mixerwars');}

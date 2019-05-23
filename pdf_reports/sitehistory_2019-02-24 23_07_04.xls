@@ -1,0 +1,17 @@
+<html><body><table width="100%" cellpadding="0" cellspacing="0"><tr valign="middle">
+						<td width="5%" align="center" class="table_line1_left"></td>
+                                                <td width="25%" class="table_line1_left paddleft">&nbsp;TICKET ID</td>
+                                                <td width="25%" class="table_line1_left paddleft">&nbsp;PROBLEM</td>
+						<td width="25%" class="table_line1_left paddleft">&nbsp;SITE NAME</td>
+						<td width="20%" class="table_line1_left paddleft">&nbsp;START DATE</td>
+                                                <td width="20%" class="table_line1_left paddleft">&nbsp;END DATE</td>
+						<td width="50%" class="table_line1_left_right paddleft">&nbsp;STATUS</td>
+					</tr>
+					<tr valign="middle"><td class="bar" colspan="5"></td></tr><tr bgcolor="#EFEFEF">	<td align="center" class="table_line2_left">1</td>
+                                <td class="paddleft table_line2_left " valign="top" align="left">1</td>
+				<td class="paddleft table_line2_left " valign="top" align="left">asfsaedf</td>
+
+                                    <td class="paddleft table_line2_left " valign="top" align="left">Odiogan Main</td>
+                                    <td class="paddleft table_line2_left " valign="top" align="left">2019-02-24 22:44:00</td>
+                                    <td class="paddleft table_line2_left " valign="top" align="left">0000-00-00 00:00:00</td>
+                                    <td class="paddleft table_line2_left_right" valign="top" align="left" style="color:#f95f1b">&nbsp;New</td></tr></table></body></html>

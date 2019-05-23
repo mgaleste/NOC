@@ -1,0 +1,42 @@
+.dynamic-tab-pane-control .tab-page {
+	/*height:		640px;*/
+	height:auto;
+	/*width:		758px;*/
+	/*width:98%;*/
+	width:auto;
+	overflow:	auto;
+}
+
+.dynamic-tab-pane-control .tab-page .dynamic-tab-pane-control .tab-page {
+	height:		100px;
+}
+
+form {
+	margin:		0;
+	padding:	0;
+}
+
+.dynamic-tab-pane-control.tab-pane {
+	margin:	10px;
+	/*width:	780px;*/
+	/*width:98%*/
+	width:auto;
+}
+
+.dynamic-tab-pane-control h2 {
+	text-align:	center;
+	width:		auto;
+}
+
+.dynamic-tab-pane-control h2 a {
+	display:	inline;
+	width:		auto;
+}
+
+.dynamic-tab-pane-control a:hover {
+	background: transparent;
+}
+
+.dynamic-tab-pane-control .tab-page h2 {
+	text-align:	left;
+}

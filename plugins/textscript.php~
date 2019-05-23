@@ -1,0 +1,17 @@
+<script>
+
+
+function numberOnly(evt)
+{
+         var charCode = (evt.which) ? evt.which : event.keyCode
+         if (charCode > 31 && (charCode < 48 || charCode > 57))
+            return false;
+
+         return true;
+}
+function updateOrder(pageOrder,teamId){			
+				//alert("ho"+pageOrder+"-"+teamId);
+				alert($("#"+teamId).val());
+				$.get('modules/team/update.php',function(d,s){alert(d+s)});
+			}	
+</script>

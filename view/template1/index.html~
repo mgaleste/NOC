@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	    <title>{title}</title>
+	    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" /> 
+		<meta http-equiv="Content-Type" content="text/html; charset={meta_charset}"/>
+		<meta name="description" content="{meta_description}" />
+		<meta name="keywords" content="{meta_keywords}" />
+		<meta name="author" content="{meta_author}" />
+		
+	    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<style type="text/css">@import url({plug}calendar/calendar-win2k-1.css);</style>
+		<script type="text/javascript" src="{plug}calendar/calendar.js"></script>
+		<script type="text/javascript" src="{plug}calendar/lang/calendar-en.js"></script>
+		<script type="text/javascript" src="{plug}calendar/calendar-setup.js"></script>	 
+		<script type="text/javascript" src="{plug}customalert/customalert.js"></script>
+		<script type="text/javascript" src="{plug}sorttable.js"></script>
+		
+		
+	    <link rel="stylesheet" href="{css}mystyles.css" type="text/css"/>	
+		<link rel="stylesheet" type="text/css" href="{plug}menu/jqueryslidemenu.css"/>
+		<link rel="stylesheet" type="text/css" href="{plug}vmenu/vmenu.css"/> 
+				<!--[if lte IE 7]> <style type="text/css">html .jqueryslidemenu{height: 1%;} /*Holly Hack for IE7 and below*/</style><![endif]-->
+		<!--<script type="text/javascript" src="{plug}menu/jquery.min.js"></script>-->
+		<script type="text/javascript" src="{plug}menu/jqueryslidemenu.js"></script> 
+		 
+			<script type="text/javascript" >		
+			$(document).ready(function(e) {
+					// Check if there's a message	
+					if($('.message').length) {
+						// the timeout is there to make things work properly in IE
+						// If we have no timeout IE will trigger mousemove instantly
+						setTimeout(removeMessage, 1000);		    
+					} 	
+			});
+					
+			function removeMessage(){
+				$(document).one('click mousemove keypress', function(e) {
+					// Fade the message away after 500 ms
+					$('.message').animate({ opacity: 1.0 }, 1000).fadeOut();
+				});		
+			}
+			</script>
+					 
+				<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/themes/base/jquery-ui.css" type="text/css" />
+				<link rel="stylesheet" href="{plug}plupload/js/jquery.ui.plupload/css/jquery.ui.plupload.css" type="text/css" />
+
+				<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>-->
+				<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+				<script type="text/javascript" src="http://bp.yahooapis.com/2.4.21/browserplus-min.js"></script>
+				
+				
+				<script type="text/javascript" src="{plug}plupload/js/plupload.js"></script>
+				<script type="text/javascript" src="{plug}plupload/js/plupload.gears.js"></script>
+				<script type="text/javascript" src="{plug}plupload/js/plupload.silverlight.js"></script>
+				<script type="text/javascript" src="{plug}plupload/js/plupload.flash.js"></script>
+				<script type="text/javascript" src="{plug}plupload/js/plupload.browserplus.js"></script>
+				<script type="text/javascript" src="{plug}plupload/js/plupload.html4.js"></script>
+				<script type="text/javascript" src="{plug}plupload/js/plupload.html5.js"></script>
+				<script type="text/javascript" src="{plug}plupload/js/jquery.ui.plupload/jquery.ui.plupload.js"></script>			 <script>
+	$("input").blur(function(){
+	alert(this.value);
+		$.get("modules/team/update.php",function(d,s){
+			alert(this.value+d+s);
+		});
+	
+	});
+</script>		
+	</head>
+	
+	<body> 
+		<table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
+			<tr><td class="banner"    bgcolor="#ffffff">{banner}</td></tr>
+			<tr><td valign="top" align="center" bgcolor="#00426d" style="background-image:url('view/template1/navbg.jpg'); background-repeat:repeat-x">{menu}</td></tr>
+			<tr><td>&nbsp;</td></tr>
+			 
+			<tr>
+				<td valign="top">
+			 		<table cellpadding="0" width="1000px" cellspacing="0" border="0" class="content" align="center">
+						<tr>							
+							<td valign="top" width="20%"  class="leftcol">{left}</td>							
+							<td valign="top" width="80%" id="rightnav" class="rightcol">{right}</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr><td height="15px">&nbsp;</td></tr>			
+			<tr><td><table cellpadding="0" align="center" cellspacing="0" border="0">
+				<tr><td align="center" class="foot_text">Copyright {year} All Rights Reserved</td></tr>
+				<tr><td align="center"><a href="http://www.cid-systems.com" target="_blank"><img src="{images}powered.jpg" border="0"/></a></td></tr>
+				</table></td></tr>
+			<tr><td height="25px">&nbsp;</td></tr>
+		</table> 
+		 
+		<script type="text/javascript"> 
+			function changePerma(value){
+				var perma;
+				perma = value.replace(/\s+/g, '-').toLowerCase();
+				document.getElementById('permalink').value = perma;		
+			} 
+		</script>	 
+  
+		<script>
+			function hide_div(divid){		
+					document.getElementById(divid).style.display="none";
+				}			
+			function show_div(divid){
+					document.getElementById(divid).style.display="";
+				} 
+		</script>	
+		
+		<script type="text/javascript" src="{plug}archiving/checkbox_deselectall.js"></script>
+		<script type="text/javascript" src="{plug}archiving/checkbox_selectall.js"></script>
+		<script type="text/javascript" src="{plug}archiving/scripts.js"></script>
+		<script type="text/javascript" src="{plug}scripts.js"></script>		
+		<!--
+		<script type="text/javascript" src="{plug}fancy/source/jquery.fancybox.js?v=2.0.6"></script>
+		<link rel="stylesheet" type="text/css" href="{plug}fancy/source/jquery.fancybox.css?v=2.0.6" media="screen" />
+		<script type="text/javascript"> 
+			$(document).ready(function() {
+				$(".fancybox").fancybox({
+					//maxWidth	: 1200,
+					//maxHeight	: 1000,
+					fitToView	: true,
+					width		: '100%',
+					height		: '100%',
+					autoSize	: true,
+					closeClick	: false,
+					openEffect	: 'none',
+					closeEffect	: 'none'
+				});
+			});
+		</script>		
+		
+		 -->
+ 	</body> 
+</html> 

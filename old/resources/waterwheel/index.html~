@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Waterwheel Carousel Demo</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.waterwheelCarousel.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        var carousel = $("#carousel").waterwheelCarousel({
+          flankingItems: 3,
+        });
+
+        $('#prev').bind('click', function () {
+          carousel.prev();
+          return false
+        });
+
+        $('#next').bind('click', function () {
+          carousel.next();
+          return false;
+        });
+
+      });
+    </script>
+
+    <style type="text/css">
+      #carousel {
+        width:760px;
+        border:1px solid #222;
+        height:300px;
+        position:relative;
+        clear:both;
+        overflow:hidden;
+        background:#FFF;
+      }
+      #carousel img {
+        visibility:hidden; /* hide images until carousel can handle them */
+        cursor:pointer; /* otherwise it's not as obvious items can be clicked */
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <div id="carousel">
+      <a href="#"><img src="images/1.jpg" id="item-1" /></a>
+      <a href="#"><img src="images/2.jpg" id="item-2" /></a>
+      <a href="#"><img src="images/3.jpg" id="item-3" /></a>
+      <a href="#"><img src="images/4.jpg" id="item-4" /></a>
+      <a href="#"><img src="images/5.jpg" id="item-5" /></a>
+      <a href="#"><img src="images/6.jpg" id="item-6" /></a>
+      <a href="#"><img src="images/7.jpg" id="item-7" /></a>
+      <a href="#"><img src="images/8.jpg" id="item-8" /></a>
+      <a href="#"><img src="images/9.jpg" id="item-9" /></a>
+    </div>
+    <a href="#" id="prev">Prev</a> | <a href="#" id="next">Next</a>
+
+    <br/>
+
+
+
+  </body>
+</html>
+

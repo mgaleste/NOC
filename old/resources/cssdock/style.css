@@ -1,0 +1,37 @@
+#dock2 { 
+	position: absolute;
+	margin:0 auto;
+	padding:0 auto;	 
+	width:992px;
+}
+
+.dock{
+background: url(images/bg.jpg); 
+width:992px;
+}
+
+.dock-container2 { 
+	text-align: center;
+	height: 438px;		
+}
+
+a.dock-item2 {
+	display: block;  	
+	color: #000; 
+	bottom: 0px; 	
+	position: absolute;
+	text-align: center;
+	text-decoration: none;	
+}
+
+.dock-item2  { 
+	padding-left:40px;
+}
+
+.dock-item2 img {
+	border: none;  
+	width:221px;
+	height:377px; 
+	text-align: center;	
+}
+  

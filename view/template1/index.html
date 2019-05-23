@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    	<title>{title}</title>
+    	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" /> 
+		<meta http-equiv="Content-Type" content="text/html; charset={meta_charset}"/>
+		<meta name="description" content="{meta_description}" />
+		<meta name="keywords" content="{meta_keywords}" />
+		<meta name="author" content="{meta_author}" />
+		
+		<link rel="stylesheet" href="{css}mystyles.css" type="text/css"/>	
+		<!--IMPROMPTU CSS-->
+		<link rel="stylesheet" type="text/css" media="all" href="{plug}impromptu/styles.css" />
+		
+		<!--TABPANE CSS
+		<link type="text/css" rel="StyleSheet" href="{plug}tabpane1/tab.webfx.css" />-->
+		
+		<!--CALENDAR CSS-->
+		<link rel="stylesheet" type="text/css" media="all" href="{plug}calendar/calendar-win2k-1.css" />
+		
+		<!--LYTEBOX CSS-->
+		<link rel="stylesheet" type="text/css" media="all" href="{plug}lytebox/lytebox.css" />
+		
+	    <!--<script type="text/javascript" src="{plug}jquery.min.js"></script>
+		<style type="text/css">@import url({plug}calendar/calendar-win2k-1.css);</style>-->
+		<script type="text/javascript" src="{plug}calendar/calendar.js"></script>
+		<script type="text/javascript" src="{plug}calendar/lang/calendar-en.js"></script>
+		<script type="text/javascript" src="{plug}calendar/calendar-setup.js"></script>	 
+		<!--<script type="text/javascript" src="{plug}customalert/customalert.js"></script>-->
+		<script type="text/javascript" src="{plug}canvasjs-2.3.1/canvasjs.min.js"></script>
+                <script type="text/javascript" src="{plug}canvasjs-2.3.1/jquery-1.12.4.min.js"></script>
+                <script type="text/javascript" src="{plug}canvasjs-2.3.1/bootstrap.min.js"></script>
+               
+	    <!--IMPROMPTU JSCRIPT-->
+		<script type="text/javascript" src="{plug}impromptu/jquery.corner.js"></script>
+		<script type="text/javascript" src="{plug}impromptu/jquery-impromptu.js"></script>
+		<script type="text/javascript" src="{plug}impromptu/common.js"></script>
+		
+		<!--TABPANE JSCRIPT
+		<script type="text/javascript" src="{plug}tabpane1/tabpane.js"></script>-->
+		
+		<!--IDTAB JSCRIPT-->
+		<script type="text/javascript" src="{plug}jquery/jquery.idTabs.js"></script>
+		
+		<!--LYTEBOX JSCRIPT-->
+		<script type="text/javascript" src="{plug}lytebox/lytebox.js"></script>
+		
+		<!--ERROR MESSAGE-->
+		<script type="text/javascript" >		
+			$(document).ready(function(e) {
+				// Check if there's a message	
+				if($('.message').length) {
+					// the timeout is there to make things work properly in IE
+					// If we have no timeout IE will trigger mousemove instantly
+					setTimeout(removeMessage, 1000);		    
+				} 	
+			});
+					
+			function removeMessage(){
+				$(document).one('click mousemove keypress', function(e) {
+					// Fade the message away after 500 ms
+					$('.message').animate({ opacity: 0.7 }, 1500).fadeOut();
+				});		
+			}
+			
+			function viewRecord(evt,url){
+				if(evt.which != 0){
+					var charCode = (evt.which) ? evt.which : event.keyCode;
+				}
+				if(url != ''){
+	  				if(evt.ctrlKey==1){
+	  					window.open(url);
+	  				}else{
+  						document.location.href = url
+  					}
+  				}
+			}
+		</script>
+		<!--ERROR MESSAGE-->
+	</head>
+	
+	<body> 
+		<table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
+			<tr><td colspan="2" class="banner" bgcolor="#FFFFFF">{banner}</td></tr>
+			<tr><td valign="top" align="center" bgcolor="#EEEEEE" width="20%">{menu}</td>
+				<td valign="top">
+			 		<table cellpadding="0" width="80%" cellspacing="0" border="0" class="content" align="center">
+						<tr>							
+							<td valign="top" width="90%" id="rightnav" class="rightcol ">{right}</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr><td colspan="2" height="15px">&nbsp;</td></tr>
+			<tr><td colspan="2"><table cellpadding="0" align="center" cellspacing="0" border="0">
+				<tr><td align="center" class="foot_text">Copyright {year} All Rights Reserved</td></tr>
+
+				</table></td></tr>
+			<tr><td colspan="2" height="25px">&nbsp;</td></tr>
+		</table> 
+ 	</body> 
+ 	
+ 	<!--<script>
+		function hide_div(divid){		
+				document.getElementById(divid).style.display="none";
+			}			
+		function show_div(divid){
+				document.getElementById(divid).style.display="";
+			} 
+	</script>-->
+</html> 

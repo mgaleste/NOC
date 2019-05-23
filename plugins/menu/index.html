@@ -1,0 +1,77 @@
+<html>
+<head>
+		<link rel="stylesheet" type="text/css" href="jqueryslidemenu.css"/>
+			<!--[if lte IE 7]> <style type="text/css">html .jqueryslidemenu{height: 1%;} /*Holly Hack for IE7 and below*/</style><![endif]-->
+		<script type="text/javascript" src="jquery.min.js"></script>
+		<script type="text/javascript" src="jqueryslidemenu.js"></script>
+		<script  type="text/javascript">
+		/*$(document).ready(function(){
+  $("#slide a.hide").hover(function(){
+     $("#formID select.hidden").css({ visibility: "hidden" });
+   },function(){
+    $("#formID select.hidden").css({ visibility: "visible" });
+});
+});*/
+		</script>
+</head>		
+<body>	
+<table width="100%" cellpadding="0" cellspacing="0">
+	<tr>
+		<td valign="top">
+			<div id="myslidemenu" class="jqueryslidemenu">
+				<ul >
+					<li align="right" style="text-align:right"><a href="#">Welcome <?= $_SESSION['gp_fname'].'&nbsp;'.$_SESSION['gp_lname'];?>, </a></li>
+					<li><a href="index.php">HOME</a></li>
+					<li><a href="#">MY PROFILE</a>
+						  <ul>
+							  <li><a href="index.php?mod=profile&type=pass">Change Password</a></li>							  							  			  
+							  <li><a href="index.php?mod=profile&type=info&task=view">Account Information</a></li>							  							  			  
+						  </ul>
+					</li>
+					<li><a href="#">MODULES</a>
+						  <ul id="slide">
+							  <li><a href="index.php?mod=about&task=list">About</a></li>	
+							  <li><a href="index.php?mod=banner&task=create">Banner</a></li>							  							  
+							  <li><a href="index.php?mod=career&task=list">Careers</a></li>							  							  
+							  <li><a href="index.php?mod=communication&type=communication&task=list">Communications</a></li>
+							  <li><a href="index.php?mod=contact&type=settings">Contact Us</a></li>							  
+							  <li><a href="index.php?mod=faq&task=list">FAQs</a></li>
+							  <li><a href="index.php?mod=member&task=list">Members</a></li>
+							  <li><a href="index.php?mod=news&task=list">News</a>
+							  <ul><li><a href="">test</a>
+								<ul><li><a href="">test</a></li></ul>
+							  </li></ul>
+							  </li>
+							  <li><a href="index.php?mod=partner&task=list">Partners</a></li>
+							  <li><a href="index.php?mod=products&type=product&task=list">Products</a></li>							  
+							  <li><a href="index.php?mod=survey&task=list">Surveys</a></li>
+							  <li><a href="index.php?mod=trivia&task=list">Trivias</a></li>
+						  </ul>
+						  
+
+
+
+					</li>
+				<?
+				if($_SESSION['gp_level'] == 1){
+				?>	
+					<li><a href="#">USERS</a>
+						  <ul>
+							   <li><a href="index.php?mod=admin&task=create">Create New User</a></li>
+							   <li><a href="index.php?mod=admin&task=list">List of Users</a></li>
+							   <li><a href="index.php?mod=log">Logged</a></li>	
+						  </ul>
+					</li>
+				<?}?>	
+					<li><a href="logout.php">LOGOUT</a></li>					
+				
+				
+				</ul>
+				 <br style="clear: left" />
+				
+			</div>
+		</td>
+	</tr>
+</table>
+</body>
+</html>

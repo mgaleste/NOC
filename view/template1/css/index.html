@@ -1,0 +1,329 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"   "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+	    <title>{title}</title>
+	    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" /> 
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>					
+		<script type="text/javascript" src="view/template1/js/pngFix/jquery.pngFix.pack.js"></script> 
+		<script type="text/javascript" src="view/template1/js/pngFix/jquery.pngFix.js"></script> 		
+		
+		<script language="javascript" type="text/javascript" src="plugins/niceforms/niceforms.js"></script>
+		<style type="text/css" media="screen">@import url(plugins/niceforms/niceforms-default.css);</style>		
+		
+		<script type="text/javascript" src="plugins/addRow.js"></script>
+		<script type="text/javascript" src="plugins/checkboxChanger.js"></script>
+		
+		<style type="text/css">@import url(plugins/calendar/calendar-win2k-1.css);</style>
+		<script type="text/javascript" src="plugins/calendar/calendar.js"></script>
+		<script type="text/javascript" src="plugins/calendar/lang/calendar-en.js"></script>
+		<script type="text/javascript" src="plugins/calendar/calendar-setup.js"></script>		
+		
+		<script type="text/javascript" src="plugins/instantedit.js"></script>
+		<script type="text/javascript" src="plugins/sorttable/sorttable.js"></script>
+		
+	    <link rel="stylesheet" href="view/template1/css/mystyles.css" type="text/css"/>	
+		<link rel="stylesheet" type="text/css" href="plugins/menu/jqueryslidemenu.css"/>
+		<link rel="stylesheet" type="text/css" href="plugins/vmenu/vmenu.css"/>
+		<!--[if lte IE 7]> <style type="text/css">html .jqueryslidemenu{height: 1%;} /*Holly Hack for IE7 and below*/</style><![endif]-->
+		<script type="text/javascript" src="plugins/jquery.min.js"></script>
+		<!--<script type="text/javascript" src="plugins/menu/jquery.min.js"></script>-->
+		<script type="text/javascript" src="plugins/menu/jqueryslidemenu.js"></script>
+		<script  type="text/javascript">
+		$(document).ready(function(){
+		  $("#slide a.hide").hover(function(){
+		     $("#formID select.hidden").css({ visibility: "hidden" });
+		   },function(){
+		    $("#formID select.hidden").css({ visibility: "visible" });
+			});
+		});
+		</script>
+		<script type="text/javascript" src="plugins/archiving/checkbox_deselectall.js"></script>
+		<script type="text/javascript" src="plugins/archiving/checkbox_selectall.js"></script>
+		<script type="text/javascript" src="plugins/archiving/scripts.js"></script>
+
+		
+		<style type="text/css">
+					ul.tabs {
+							margin: 0;
+							padding: 0;
+							float: left;
+							list-style: none;
+							height: 32px; /*--Set height of tabs--*/
+							border-bottom: 1px solid #999;
+							border-left: 1px solid #999;
+							width: 100%;
+					}
+					
+					ul.tabs li {
+							float: left;
+							margin: 0;
+							padding: 0;
+							height: 31px; /*--Subtract 1px from the height of the unordered list--*/
+							line-height: 31px; /*--Vertically aligns the text within the tab--*/
+							border: 1px solid #999;
+							border-left: none;
+							margin-bottom: -1px; /*--Pull the list item down 1px--*/
+							overflow: hidden;
+							position: relative;
+							background: #e0e0e0;
+					}
+					
+					ul.tabs li a {
+							text-decoration: none;
+							color: #000;
+							display: block;
+							/*font-size: 1.2em;*/
+							font-size: 9pt;
+							font-weight:bold;
+							font-family:Arial;							
+							padding: 0 14px;
+							border: 1px solid #fff; /*--Gives the bevel look with a 1px white border inside the list item--*/
+							outline: none;
+					}
+					
+					ul.tabs li a:hover {
+							background: #ccc;
+					}
+					
+					html ul.tabs li.active, html ul.tabs li.active a:hover  { /*--Makes sure that the active tab does not listen to the hover properties--*/
+							background: #fff;
+							border-bottom: 1px solid #fff; /*--Makes the active tab look like it's connected with its content--*/
+					}
+					
+					.tab_container {
+							border: 1px solid #999;
+							border-top: none;
+							overflow: hidden;
+							clear: both;
+							float: left; width: 100%;
+							background: #fff;
+					}
+					
+					.tab_content {
+							padding: 20px;
+							font-size: 1.2em;
+					}
+		</style>
+		
+		<script type="text/javascript">
+			$(document).ready(function() {
+
+				//Default Action
+				$(".tab_content").hide(); //Hide all content
+				$("ul.tabs li:first").addClass("active").show(); //Activate first tab
+				$(".tab_content:first").show(); //Show first tab content
+				
+				//On Click Event
+				$("ul.tabs li").click(function() {
+					$("ul.tabs li").removeClass("active"); //Remove any "active" class
+					$(this).addClass("active"); //Add "active" class to selected tab
+					$(".tab_content").hide(); //Hide all tab content
+					var activeTab = $(this).find("a").attr("href"); //Find the rel attribute value to identify the active tab + content
+					$(activeTab).fadeIn(); //Fade in the active content
+					return false;
+				});
+
+			});
+		</script>
+		
+		
+		<script language="javascript" type="text/javascript" src="/bigchill/plugins/jscripts/tiny_mce/tiny_mce.js"></script>
+		<!--<script language="javascript" type="text/javascript" src="/plugins/jscripts/tiny_mce/tiny_mce.js"></script>-->
+		<script language="javascript" type="text/javascript" src="/bigchill/plugins/jscripts/tiny_mce/general.js"></script>
+		<!--<script language="javascript" type="text/javascript" src="/plugins/jscripts/tiny_mce/general.js"></script>-->		
+		<script language="javascript" type="text/javascript">
+		tinyMCE.init({
+			// General options
+			theme : "advanced",
+			mode : "exact",			
+			elements : "ajaxfilemanager,ajaxfilemanager2,ajaxfilemanager3,ajaxfilemanager4,ajaxfilemanager5,ajaxfilemanager6,ajaxfilemanager7",
+			editor_selector : "mceAdvanced",				
+			plugins : "paste,advlist,searchreplace,fullscreen,directionality,advimage,style,table,inlinepopups",
+			theme_advanced_buttons1 : "pastetext,pasteword,bold,italic,underline,strikethrough,styleprops,|,justifyleft,justifycenter,justifyright,justifyfull,outdent,indent,bullist,numlist,|,forecolor,fontselect,fontsizeselect,|,image,code,replace,undo,redo,table,charmap,removeformat,cleanup",
+			theme_advanced_buttons2 : "",
+			theme_advanced_buttons3 : "",
+			theme_advanced_buttons4 : "",
+			font_size_style_values : "8pt,10pt,11pt,12pt,14pt,18pt,24pt,36pt",
+			theme_advanced_toolbar_location : "top",
+			theme_advanced_toolbar_align : "left",
+			theme_advanced_statusbar_location : "bottom",
+			file_browser_callback : "ajaxfilemanager",
+			theme_advanced_resizing : true,			
+			theme_advanced_resize_horizontal : true,
+			apply_source_formatting : true,
+			force_br_newlines : false,			
+			force_p_newlines : false,
+			content_css : "view/template1/css/mystyles.css",
+			theme_advanced_font_sizes: "8pt,10pt,11pt,12pt,13pt,14pt,16pt,18pt,20pt",						
+			relative_urls : false,
+			paste_auto_cleanup_on_paste : true
+		});
+
+
+		
+		function ajaxfilemanager(field_name, url, type, win) {
+			var ajaxfilemanagerurl = "/bigchill/plugins/jscripts/tiny_mce/plugins/ajaxfilemanager/ajaxfilemanager.php";
+			//var ajaxfilemanagrurl = "/plugins/jscripts/tiny_mce/plugins/ajaxfilemanager/ajaxfilemanager.php";
+			
+			switch (type) {
+				case "image":
+					break;
+				case "media":
+					break;
+				case "flash": 
+					break;
+				case "file":
+					break;
+				default:
+					return false;
+			}
+            tinyMCE.activeEditor.windowManager.open({               
+			   url: "/bigchill/plugins/jscripts/tiny_mce/plugins/ajaxfilemanager/ajaxfilemanager.php",			   
+			   //url: "/plugins/jscripts/tiny_mce/plugins/ajaxfilemanager/ajaxfilemanager.php",			   
+			   width: 782,
+               height: 440,
+               inline : "yes",
+               close_previous : "no"
+            },{
+                window : win,
+                input : field_name
+            });
+            
+		}
+		
+		function getXMLHTTP() { //fuction to return the xml http object
+						var xmlhttp=false;	
+						try{
+							xmlhttp=new XMLHttpRequest();
+						}
+						catch(e)	{		
+							try{			
+								xmlhttp= new ActiveXObject("Microsoft.XMLHTTP");
+							}
+							catch(e){
+								try{
+								xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+								}
+								catch(e1){
+									xmlhttp=false;
+								}
+							}
+						}						 	
+						return xmlhttp;
+		}
+					
+		function display_menu(display_area) {		
+						//alert('subsub'+subSubSecId);
+						var strURL="displaymenu.php";
+						var req = getXMLHTTP();
+						
+						if (req) {			
+							req.onreadystatechange = function() {
+								if (req.readyState == 4) {
+									// only if "OK"
+									if (req.status == 200) {						
+										document.getElementById(display_area).innerHTML=req.responseText;						
+									} else {
+										alert("There was a problem while using XMLHTTP:\n" + req.statusText);
+									}
+								}				
+							}			
+							req.open("GET", strURL, true);
+							req.send(null);
+						}		
+		}
+	</script>
+	<script>
+			function initTinyMCE() {
+			var browsername=navigator.appName;
+			if(browsername=='Microsoft Internet Explorer'){
+						
+						tinyMCE.init({
+							// General options
+							mode : "exact",			
+							elements : "ajaxfilemanager,ajaxfilemanager2,ajaxfilemanager3,ajaxfilemanager4,ajaxfilemanager5,ajaxfilemanager6,ajaxfilemanager7",
+							editor_selector : "mceAdvanced",	
+							theme : "advanced",
+							plugins : "paste,advlist,searchreplace,fullscreen,directionality,advimage,style,table,inlinepopups",
+							theme_advanced_buttons1 : "pastetext,pasteword,bold,italic,underline,strikethrough,styleprops,|,justifyleft,justifycenter,justifyright,justifyfull,outdent,indent,bullist,numlist,|,forecolor,fontselect,fontsizeselect,|,image,code,replace,undo,redo,table,charmap,removeformat,cleanup",
+							theme_advanced_buttons2 : "",
+							theme_advanced_buttons3 : "",
+							theme_advanced_buttons4 : "",
+							font_size_style_values : "8pt,10pt,11pt,12pt,14pt,18pt,24pt,36pt",
+							theme_advanced_toolbar_location : "top",
+							content_css : "view/template1/css/mystyles.css",
+							theme_advanced_font_sizes: "8pt,10pt,11pt,12pt,13pt,14pt,16pt,18pt,20pt",			
+							theme_advanced_toolbar_align : "left",
+							theme_advanced_statusbar_location : "bottom",
+							file_browser_callback : "ajaxfilemanager",
+							theme_advanced_resizing : true,			
+							theme_advanced_resize_horizontal : true,
+							apply_source_formatting : true,
+							force_br_newlines : false,			
+							force_p_newlines : false,							
+							relative_urls : false,
+							paste_auto_cleanup_on_paste : true
+						});		
+				}
+		}
+</script>		
+			
+		<script type="text/javascript"> 
+		    $(document).ready(function(){ 
+		        $(document).pngFix(); 
+		    }); 
+		</script> 
+		
+		
+		
+		<script type="text/javascript"> 		
+			$(document).ready(function(e) {			 
+				// Check if there's a message	
+				if($('.message').length) {
+					// the timeout is there to make things work properly in IE
+					// If we have no timeout IE will trigger mousemove instantly
+					//setTimeout(removeMessage, 1500);		    
+					setTimeout(removeMessage, 500);		    
+				}				 
+			});
+			
+			function removeMessage(){
+				$(document).one('click mousemove keypress', function(e) {
+				    // Fade the message away after 500 ms
+					//$('.message').animate({ opacity: 1.0 }, 1500).fadeOut();
+					$('.message').animate({ opacity: 1.0 },0).fadeOut();
+				});		
+			}
+		
+		</script> 
+		
+		
+	</head>
+	
+	<body onload="initTinyMCE()">
+		<script type="text/javascript" src="plugins/tooltips/wz_tooltip.js"></script>
+		<table cellpadding="0" cellspacing="0" border="0" class="main" align="center">
+			<tr><td class="banner">{banner}</td></tr>
+			<tr><td valign="top">{menu}</td></tr>
+			<tr><td>&nbsp;</td></tr>
+			
+			
+			
+			<tr>
+				<td valign="top">
+					<table cellpadding="0" width="100%" cellspacing="0" border="0" class="content" align="center">
+						<tr>
+							<td valign="top" align="left" class="leftcol">{left}</td>
+							<td valign="top" class="rightcol">{right}</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr><td height="15px">&nbsp;</td></tr>
+			<tr><td align="center" class="footer">{footer}</td></tr>
+			<tr><td height="25px">&nbsp;</td></tr>
+		</table>		
+	</body>
+	
+</html>

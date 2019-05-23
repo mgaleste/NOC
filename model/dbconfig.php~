@@ -1,0 +1,9 @@
+<?php 
+
+if(!defined("W_SERVER")){define("W_SERVER", "localhost");}
+if(!defined("W_USER")){define("W_USER", "root");}
+if(!defined("W_PASSWORD")){define("W_PASSWORD", 'welcome_123');}
+if(!defined("W_DATABASE")){define("W_DATABASE", "ourwebpr_imagead3");}
+?>
+
+ 

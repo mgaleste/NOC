@@ -1,0 +1,38 @@
+<? 
+	include_once AP_MODEL."page.php";
+	include_once CLASSPATH."coreMaintenance.inc";
+	
+	$page 	= 	new Page(TEMPLATE."index.html");
+	$core	=	new coreMaintenance();
+echo "hi";	 
+	//Retrieve Meta Details
+	$metaArr 	= array('main_title','logo');
+	$metaResult = $core->retrieveMetaSettings($metaArr);
+	foreach($metaResult as $metaIndex => $metaValue){		
+		$$metaArr[$metaIndex] = stripslashes(html_entity_decode($metaValue));
+	}
+
+	
+	$page->replace_tags(array(
+	  "title" 	=> $main_title,	  
+	  "menu" 	=> TEMPLATE."menu.html", 
+	  "right" 	=> AP_CONTROLLER."MainContentController.php",
+	  "left" 	=> TEMPLATE."left.php",
+	  "footer" 	=> TEMPLATE."footer.html",
+	  "banner" 	=> TEMPLATE."banner.html",
+	  "banner_img" 	=> $logo,
+	  "banner_text" => "",
+	  "banner_alt" 	=> "logo"	  
+	));
+	
+	$page->replace_tags2(array(
+		"plug" => AP_PLUGINS,
+		"images" => IMAGES,
+		"css" => AP_CSS,
+		"year" => date('Y')
+	));
+	
+	$page->output();
+	
+
+?>

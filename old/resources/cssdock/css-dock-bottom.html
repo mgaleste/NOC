@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>CSS Mac Dock</title>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/interface.js"></script>
+
+<!--[if lt IE 7]>
+ <style type="text/css">
+ .dock img { behavior: url(iepngfix.htc) }
+ </style>
+<![endif]-->
+
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<!--bottom dock -->
+<div class="dock" id="dock">
+  <div class="dock-container">
+  <a class="dock-item" href="#"><span>Home</span><img src="images/home.png" alt="home" /></a> 
+  <a class="dock-item" href="#"><span>Contact</span><img src="images/email.png" alt="contact" /></a> 
+  <a class="dock-item" href="#"><span>Portfolio</span><img src="images/portfolio.png" alt="portfolio" /></a> 
+  <a class="dock-item" href="#"><span>Music</span><img src="images/music.png" alt="music" /></a> 
+  
+
+</div>
+
+<!--dock menu JS options -->
+
+
+<script type="text/javascript">
+	
+	$(document).ready(
+		function()
+		{
+			$('#dock').Fisheye(
+				{
+					maxWidth: 50,
+					items: 'a',
+					itemsText: 'span',
+					container: '.dock-container',
+					itemWidth: 40,
+					proximity: 90,
+					halign : 'center'
+				}
+			)
+		}
+	);
+
+</script>
+
+<script type="text/javascript">
+	/*
+	$(document).ready(
+		function()
+		{
+			$('#dock2').Fisheye(
+				{
+					//maxWidth: 60,
+					maxWidth: 128,
+					items: 'a',
+					itemsText: 'span',
+					container: '.dock-container2',
+					itemWidth: 100,
+					//itemWidth: 40,
+					proximity: 200,
+					alignment : 'left',
+					valign: 'bottom',
+					halign : 'center'
+				}
+			)
+		}
+	);
+*/
+</script>
+</body>
+</html>

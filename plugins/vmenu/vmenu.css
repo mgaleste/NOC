@@ -1,0 +1,51 @@
+
+.urbangreymenu{
+width: 190px; /*width of menu*/
+}
+
+.urbangreymenu .headerbar{
+font: bold 13px Verdana;
+color: #525252;
+height:25px;
+background-image:url('titlebg.jpg');
+background-repeat:repeat-x;
+margin-bottom: 0; /*bottom spacing between header and rest of content*/
+text-transform: uppercase;
+text-align:center;
+padding: 5px 0 0px 0px; /*31px is left indentation of header text*/
+}
+
+.urbangreymenu ul{
+list-style-type: none;
+/*list-style-image: url('arrowstop.gif');*/
+margin: 0;
+padding: 0;
+margin-bottom: 0; /*bottom spacing between each UL and rest of content*/
+}
+
+.urbangreymenu ul li{
+padding-bottom: 2px; /*bottom spacing between menu items*/
+}
+
+.urbangreymenu ul li a{
+font: normal 12px Arial;
+color: #525252;
+background-image:url('navbg.jpg');
+background-repeat:repeat-x;
+display: block;
+padding: 5px 0;
+line-height: 17px;
+padding-left: 8px; /*link text is indented 8px*/
+text-decoration: none;
+}
+
+.urbangreymenu ul li a:visited{
+color: black;
+}
+
+.urbangreymenu ul li a:hover{ /*hover state CSS*/
+color: white;
+background: black;
+}
+
+

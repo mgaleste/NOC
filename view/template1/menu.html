@@ -1,0 +1,73 @@
+<?
+ //GET GROUP ACCESS
+$recon	 				= new recordUpdate();
+$mform 					= new formMaintenance();
+$validation_class 		= new validations();
+$imgfunc 				= new imageFunctions();
+$modulerecord 			= new record('pages');
+
+$grupid 		=	$_SESSION['gp_group']; 
+$arrayValues3 	=	array('groupCode', 'moduleCode');
+$retArray3 		=	$recon->retrieveEntry("group_modules", $arrayValues3, "", "groupCode='$grupid' ORDER BY moduleCode DESC");
+
+ foreach ($retArray3 as $retIndex => $retValue) {
+        $$retIndex 	= $retValue;
+        $mainArr 	= explode('|', $$retIndex);
+        $pid 		= $mainArr[0];
+        $groupid 	= $mainArr[1];	    
+		
+	}
+/*********************************************************************************************/
+if(!isset($_GET['mode'])){
+?>
+<table  width="100%" align="left" cellpadding="0" cellspacing="0" border="0">
+<?
+if($grupid !='customer'){
+?>
+        <tr>
+	<td width="100px" align="center" valign="top">
+		<a href="index.php">
+						<font color="#525252">Dashboard</font>
+					</a>
+	</td>
+        </tr>
+<?
+}
+	$modSelected = (isset($_GET['mod']))? $_GET['mod'] : "";
+	$queryMenu = "SELECT m.moduleGroup moduleGroup,m.type type,m.moduleCaption moduleCaption FROM modules m JOIN group_modules gm USING(moduleCode) WHERE gm.groupCode='$grupid' and m.stat='active' GROUP BY m.moduleGroup ORDER BY m.menuOrder";
+	$retrieveMenu = $recon->retrieveCustomQuery($queryMenu);
+	foreach($retrieveMenu as $groups){
+		$group = explode('|', $groups);
+		$link = 'href="?mod='.$group[0].'&type='.$group[1].'"';
+		$color = ($group[0]==$modSelected)? "#3EC23E" : "#525252";
+		echo '<tr>
+				<td width="100px" align="center" valign="top">
+					<a '.$link.'>
+						<font color="'.$color.'">'.ucfirst(str_ireplace("_"," ",$group[2])).'</font>
+					</a>
+				</td>
+			</tr>';
+	}
+?>
+<?
+if($grupid !='customer'){
+?>
+    <tr>
+	<td width="100px" align="center" valign="top">
+		<a href="index.php?mod=reports&type=reports">
+						<font color="#525252">Reports</font>
+					</a>
+	</td>
+        </tr>
+        <tr>
+	<td width="100px" align="center" valign="top">
+		<a href="index.php?mod=map&type=map">
+						<font color="#525252">Live Map Site</font>
+					</a>
+	</td>
+        </tr>
+<? } ?>
+</table>
+ <?
+ }
+ ?>

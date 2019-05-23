@@ -1,0 +1,93 @@
+<?
+ //GET GROUP ACCESS
+$recon	 				= new recordUpdate();
+$mform 					= new formMaintenance();
+$validation_class 		= new validations();
+$imgfunc 				= new imageFunctions();
+$modulerecord 			= new record('pages');
+
+$grupid 		=	$_SESSION['gp_group']; 
+
+$arrayValues3 	=	array('id', 'groupCode', 'moduleCode','accessid');
+$retArray3 		=	$recon->retrieveEntry("groupModuleAccess", $arrayValues3, "", "groupCode='$grupid' ORDER BY id DESC");
+ var_dump($grupid);
+ foreach ($retArray3 as $retIndex => $retValue) {
+        $$retIndex 	= $retValue;
+        $mainArr 	= explode('|', $$retIndex);
+        $pid 		= $mainArr[0];
+        $groupid 	= $mainArr[1];	    
+		$moduleid	= $mainArr[2] . "<br/>"; 	    	     		
+        $accessid	= $mainArr[3];		
+	}
+/*********************************************************************************************/
+
+?>
+<table  width="1000px" align="center" cellpadding="0" cellspacing="0" border="0">
+	<tr>	
+		<td valign="top">			
+			<div style="border:none" id="myslidemenu" class="jqueryslidemenu">
+<?								
+		 
+		$task		 	=  	isset($_GET['task']) ? $_GET['task'] : "";		
+		$module 		=  	isset($_GET['mod']) ? $_GET['mod'] : "";		
+		$menubar		=	new setting();
+		 
+ 		
+ 
+ 
+	
+		$menumodules	=	$menubar->get_menu($module);
+
+		if(count($menumodules)){
+?>			
+				<ul > 
+
+					 <?	
+					 
+					 foreach($menumodules as $module_item =>$mitem){
+								$modcap			=	$mitem['modcap'];
+								$module_group	=	$mitem['modgroup'];
+								$module_name	=	$mitem['modname'];			 
+								$module_links	=	$mitem['linkout'];	
+								$submodules		=	$menubar->get_submenu($module_group,$grupid);
+								
+					?>
+								
+						<li>
+						<? if(!empty($submodules)){?>	
+						<a href="index.php"><?= $module_group ?></a>
+						<?}?>
+						
+					<? 
+					
+					foreach($submodules as $subIndex => $subValue){						 
+								if(!empty($subValue['type'])){?>								
+													<ul>	
+												<?													
+												foreach($submodules as $smodule_item =>$smitem){
+														$smodule_cap	=	$smitem['modcap'];
+														$smodule_group	=	$smitem['modgroup'];
+														$smodule_name	=	$smitem['modname'];			 
+														$smodule_links	=	$smitem['linkout'];	
+														$smodule_type	=	$smitem['type'];	
+														$ssubstat		=	$smitem['substat'];	
+														//$subsubmodules	=	$menubar->get_subsubmenu($module_group,$smodule_name); ?>
+																					 
+												<li>
+													<a href="<?=$smodule_links?>" id="generate"><?= rep_under($smodule_cap)?></a>
+												</li>
+												<?}?></ul>
+										
+								<?}
+						}		?>
+						</li>		 
+					<?}?> 
+				</ul>
+		<?}?>		
+				 <br style="clear: left" />
+				
+			</div>
+		</td>
+	</tr>
+</table>
+ 

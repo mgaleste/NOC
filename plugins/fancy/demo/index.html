@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	
+	<script type="text/javascript" src="../lib/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="../source/jquery.fancybox.js?v=2.0.6"></script>
+	<link rel="stylesheet" type="text/css" href="../source/jquery.fancybox.css?v=2.0.6" media="screen" />
+	<script type="text/javascript"> 
+		$(document).ready(function() {
+			$(".fancybox").fancybox({
+				maxWidth	: 1200,
+				maxHeight	: 1000,
+				fitToView	: true,
+				width		: '100%',
+				height		: '100%',
+				autoSize	: true,
+				closeClick	: true,
+				openEffect	: 'none',
+				closeEffect	: 'none'
+			});
+		});
+	</script>
+	 
+</head>
+<body>
+
+<a class="fancybox fancybox.iframe" href="http://www.ourwebprojects.com/salton">Iframe</a>
+	 
+</body>
+</html>

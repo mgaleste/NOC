@@ -1,0 +1,100 @@
+<html><body><table width="100%" cellpadding="0" cellspacing="0"><tr valign="middle">
+						<td width="5%" align="center" class="table_line1_left"></td>
+                                                <td width="25%" class="table_line1_left paddleft">&nbsp;CUSTOMER NAME</td>
+						<td width="25%" class="table_line1_left paddleft">&nbsp;SITE NAME</td>
+                                                <td width="25%" class="table_line1_left paddleft">&nbsp;SPEED</td>
+                                                <td width="25%" class="table_line1_left paddleft">&nbsp;AMOUNT</td>
+                                                <td width="25%" class="table_line1_left paddleft">&nbsp;DUE DATE</td>
+						<td width="20%" class="table_line1_left paddleft">&nbsp;START DATE</td>
+                                                <td width="20%" class="table_line1_left paddleft">&nbsp;END DATE</td>
+						<td width="50%" class="table_line1_left_right paddleft">&nbsp;STATUS</td>
+					</tr>
+					<tr valign="middle"><td class="bar" colspan="9"></td></tr><tr bgcolor="#EFEFEF">	<td align="center" class="table_line2_left">3</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">Test2,User2 </td>
+									<td class="paddleft table_line2_left " valign="top" align="left">Odiogan Sub Main</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">2 Mbps</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">35500</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">2020-02-25</td>
+									<td class="paddleft table_line2_left " valign="top" align="left">2019-02-25 11:30:17</td>
+									<td class="paddleft table_line2_left " valign="top" align="left">0000-00-00 00:00:00</td>
+									<td class="paddleft table_line2_left_right" valign="top" align="left" style="color:#00FF00">&nbsp;Paid</td></tr><tr bgcolor="#FFFFFF">	<td align="center" class="table_line2_left">3</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">Test2,User2 </td>
+									<td class="paddleft table_line2_left " valign="top" align="left">Odiogan Sub Main</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">2 Mbps</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">35500</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">2020-02-25</td>
+									<td class="paddleft table_line2_left " valign="top" align="left">2019-02-25 11:30:12</td>
+									<td class="paddleft table_line2_left " valign="top" align="left">2019-02-25 11:30:17</td>
+									<td class="paddleft table_line2_left_right" valign="top" align="left" style="color:#f9c71b">&nbsp;Pending</td></tr><tr bgcolor="#EFEFEF">	<td align="center" class="table_line2_left">2</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">User,Test </td>
+									<td class="paddleft table_line2_left " valign="top" align="left">Odiogan Main</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">2 Mbps</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">1200</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">2020-02-25</td>
+									<td class="paddleft table_line2_left " valign="top" align="left">2019-02-25 11:29:57</td>
+									<td class="paddleft table_line2_left " valign="top" align="left">0000-00-00 00:00:00</td>
+									<td class="paddleft table_line2_left_right" valign="top" align="left" style="color:#FF0000">&nbsp;Cancelled</td></tr><tr bgcolor="#FFFFFF">	<td align="center" class="table_line2_left">2</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">User,Test </td>
+									<td class="paddleft table_line2_left " valign="top" align="left">Odiogan Main</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">2 Mbps</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">1200</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">2020-02-25</td>
+									<td class="paddleft table_line2_left " valign="top" align="left">2019-02-25 11:29:52</td>
+									<td class="paddleft table_line2_left " valign="top" align="left">2019-02-25 11:29:57</td>
+									<td class="paddleft table_line2_left_right" valign="top" align="left" style="color:#f9c71b">&nbsp;Pending</td></tr><tr bgcolor="#EFEFEF">	<td align="center" class="table_line2_left">1</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">User,Test </td>
+									<td class="paddleft table_line2_left " valign="top" align="left">Odiogan Main</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">2 Mbps</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">500</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">2020-02-25</td>
+									<td class="paddleft table_line2_left " valign="top" align="left">2019-02-25 11:29:40</td>
+									<td class="paddleft table_line2_left " valign="top" align="left">0000-00-00 00:00:00</td>
+									<td class="paddleft table_line2_left_right" valign="top" align="left" style="color:#00FF00">&nbsp;Paid</td></tr><tr bgcolor="#FFFFFF">	<td align="center" class="table_line2_left">1</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">User,Test </td>
+									<td class="paddleft table_line2_left " valign="top" align="left">Odiogan Main</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">2 Mbps</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">500</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">2020-02-25</td>
+									<td class="paddleft table_line2_left " valign="top" align="left">2019-02-25 11:29:36</td>
+									<td class="paddleft table_line2_left " valign="top" align="left">2019-02-25 11:29:40</td>
+									<td class="paddleft table_line2_left_right" valign="top" align="left" style="color:#ee9610">&nbsp;Overdue</td></tr><tr bgcolor="#EFEFEF">	<td align="center" class="table_line2_left">1</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">User,Test </td>
+									<td class="paddleft table_line2_left " valign="top" align="left">Odiogan Main</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">2 Mbps</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">500</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">2020-02-25</td>
+									<td class="paddleft table_line2_left " valign="top" align="left">2019-02-25 11:27:50</td>
+									<td class="paddleft table_line2_left " valign="top" align="left">2019-02-25 11:29:36</td>
+									<td class="paddleft table_line2_left_right" valign="top" align="left" style="color:#ee9610">&nbsp;Overdue</td></tr><tr bgcolor="#FFFFFF">	<td align="center" class="table_line2_left">1</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">User,Test </td>
+									<td class="paddleft table_line2_left " valign="top" align="left">Odiogan Main</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">2 Mbps</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">500</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">2020-02-25</td>
+									<td class="paddleft table_line2_left " valign="top" align="left">2019-02-25 11:26:05</td>
+									<td class="paddleft table_line2_left " valign="top" align="left">2019-02-25 11:27:50</td>
+									<td class="paddleft table_line2_left_right" valign="top" align="left" style="color:#ee9610">&nbsp;Overdue</td></tr><tr bgcolor="#EFEFEF">	<td align="center" class="table_line2_left">1</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">User,Test </td>
+									<td class="paddleft table_line2_left " valign="top" align="left">Odiogan Main</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">2 Mbps</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">500</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">2020-02-25</td>
+									<td class="paddleft table_line2_left " valign="top" align="left">2019-02-25 11:24:15</td>
+									<td class="paddleft table_line2_left " valign="top" align="left">2019-02-25 11:26:05</td>
+									<td class="paddleft table_line2_left_right" valign="top" align="left" style="color:#ee9610">&nbsp;Overdue</td></tr><tr bgcolor="#FFFFFF">	<td align="center" class="table_line2_left">1</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">User,Test </td>
+									<td class="paddleft table_line2_left " valign="top" align="left">Odiogan Main</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">2 Mbps</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">500</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">2020-02-25</td>
+									<td class="paddleft table_line2_left " valign="top" align="left">2019-02-25 11:23:52</td>
+									<td class="paddleft table_line2_left " valign="top" align="left">2019-02-25 11:24:15</td>
+									<td class="paddleft table_line2_left_right" valign="top" align="left" style="color:#ee9610">&nbsp;Overdue</td></tr><tr bgcolor="#EFEFEF">	<td align="center" class="table_line2_left">1</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">User,Test </td>
+									<td class="paddleft table_line2_left " valign="top" align="left">Odiogan Main</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">2 Mbps</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">500</td>
+                                                                        <td class="paddleft table_line2_left " valign="top" align="left">2020-02-25</td>
+									<td class="paddleft table_line2_left " valign="top" align="left">2019-02-25 11:23:12</td>
+									<td class="paddleft table_line2_left " valign="top" align="left">2019-02-25 11:23:52</td>
+									<td class="paddleft table_line2_left_right" valign="top" align="left" style="color:#f9c71b">&nbsp;Pending</td></tr></table></body></html>

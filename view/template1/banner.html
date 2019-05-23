@@ -1,0 +1,11 @@
+<table cellpadding="0" width="100%" align="center" cellspacing="0" border="0">
+	<tr>
+		<td align="left" valign="center" class="welcome" style="padding-left:10px;">&nbsp;<b><?=$_SESSION['main_title']?></b></td>
+		<td align="right" valign="center" class="welcome" style="text-decoration:none;  padding-right:10px;"><div>Welcome <?= $_SESSION['gp_fname'].'&nbsp;'.$_SESSION['gp_lname'];?>
+		<?if(!isset($_GET['mode'])){?>
+		&nbsp;|&nbsp;<a href="index.php?mod=profile&type=info&task=view" class="welcome" style="text-decoration:none">My Preferences</a>
+		<?}?>
+		&nbsp;|&nbsp;<a href="logout.php" class="welcome" style="text-decoration:none">Sign Out </a></div>
+		</td>
+	</tr>
+</table>

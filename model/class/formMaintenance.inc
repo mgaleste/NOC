@@ -1,0 +1,185 @@
+<?
+class formMaintenance extends connectUpdate{
+	
+	private $returnResult 	= FALSE; 
+	
+	//Input Boxes with type : text, password, radio, checkbox, submit, reset, button
+	public function inputBox($task='',$type='',$name='',$value='',$style='',$id='', $maxsize='',$extra='',$events='',$tabindex=''){
+			//all types supported except button and image
+			$types 		= (!empty($type)) 		? "type=\"$type\"" 			: "";
+			$names 		= (!empty($name)) 		? "name=\"$name\"" 			: "";
+			$values 	= (!empty($value)) 		? "value=\"".$value."\"" 		: "";
+			$maxsizes 	= (!empty($maxsize)) 	? "maxlength=\"$maxsize\"" 	: "";
+			$styles	 	= (!empty($style)) 		? "class=\"$style\"" 		: "";
+			$tabindexes	= (!empty($tabindex)) 	? "tabindex=\"$tabindex\"" 	: "";
+			$ids 		= (!empty($id)) 		? "id=\"$id\"" 				: "";
+			$mod 		= "";
+			$mtype 		= "";
+			if(isset($_GET['mod'])){
+				$mod 		= $_GET['mod']; 
+			}
+			if(isset($_GET['type'])){
+				$mtype 		= $_GET['type']; 
+			}
+			
+			if($task!='view'){	
+				switch($type){
+						case 'email':
+						case 'text':		
+						case 'password':
+							return $this->returnResult =  "<input $types $names $ids $values $maxsizes $styles $extra $tabindexes $events />";
+							break;	
+						case 'file':	
+							return $this->returnResult =  "<input $types $names $extra/>";							
+							break;
+						case 'radio':
+						case 'checkbox':
+							return $this->returnResult =  "<input $types $names $ids $values $extra $tabindexes/>";
+							break;		
+						case 'submit':
+						case 'reset':
+						case 'hidden':
+						case 'button':
+							return $this->returnResult =  "<input $types $names $ids $values $extra $styles $tabindexes/>";
+							break;									
+						default: 
+							return $this->returnResult = FALSE;
+						break;									
+				}
+			}else{
+					switch($type){	
+						case 'text':		
+						case 'password':							
+						case 'radio':
+						case 'checkbox':					
+							return $this->returnResult = $value;
+							break;						
+						case 'reset':	
+						case 'hidden':						
+							return $this->returnResult =  "<input $types $names $ids $values $extra $styles/>";
+							break;
+						case 'submit':		
+						case 'button':		
+							return $this->returnResult =  "<input type=\"button\" value=\"Back\" $styles  onClick=\"location='index.php?mod=$mod&type=$mtype'\" />";
+							break;
+						default: 
+							return $this->returnResult = FALSE;
+						break;		
+					}	
+			}	
+	}
+	
+	//Labels
+	public function label($name='',$value='',$style='',$req='',$accesskey=''){	
+			$styles	 	= (!empty($style)) 		? "class=\"$style\"" 			: "";	
+			$accesskey	= (!empty($accesskey)) 	? "accesskey=\"$accesskey\""	: "";	
+			$req		= (!empty($req)) 		? "<span style=\"color:#ff0000; font-size:8pt\">*&nbsp;</span>"	: "&nbsp;&nbsp;";	
+			$task 		= (isset($_GET['task'])) ? $_GET['task'] : "";
+			$req 		= ($task=='view') ? "" : $req;
+			return $this->returnResult = "<label for=\"$name\" $styles  $accesskey >".$req . $value."</label>";		
+	}
+	
+	//Textareas
+	public function textarea($task='',$name='',$value='',$rows='',$cols='',$style='',$id='',$accesskey='',$tabindex='',$extra='',$events=''){
+			$styles	 	= (!empty($style)) 		? "class=\"$style\"" 				: "";	
+			$ids	 	= (!empty($id)) 		? "id=\"$id\"" 						: "";	
+			$accesskey	= (!empty($accesskey)) 	? "accesskey=\"$accesskey\""		: "";	
+			$rows		= (!empty($rows)) 		? "rows=\"$rows\""					: "";	
+			$cols		= (!empty($cols)) 		? "cols=\"$cols\""					: "";	
+			$tabindex	= (!empty($tabindex)) 	? "tabindex=\"$tabindex\""			: "";	
+			$names 		= (!empty($name)) 		? "name=\"$name\"" 					: "";
+		 
+		 if($task!='view'){
+			return $this->returnResult = "<textarea $rows $cols $tabindex $names $styles  $ids $accesskey $extra $events >".html_entity_decode($value)."</textarea>";				 	
+		 }else{
+		 	return $this->returnResult = html_entity_decode($value);	
+		 }  			
+	}
+	
+	//Dropdown 
+	public function select($task='',$query='',$name='',$value='',$dbvalue='',$optionvalue='',$style='',$id='',$default='',$events='',$size='',$extra='',$multiple='',$tabindex=''){
+		if($task!='view'){
+			$styles	 	= (!empty($style)) 		? "class=\"$style\"" 				: "";	
+			$ids	 	= (!empty($id)) 		? "id=\"$id\"" 						: "";	
+			$tabindex	= (!empty($tabindex)) 	? "tabindex=\"$tabindex\""			: "";	
+			$values		= (!empty($value)) 		? $value							: "";	
+			$names 		= (!empty($name)) 		? "name=\"$name\"" 					: "";
+			$sizes 		= (!empty($size)) 		? "size=\"$size\"" 					: "";
+			$multiples	= (!empty($multiple)) 	? "multiple=\"$multiple\"" 			: "";
+			
+			$conn 		= $this->getDbConnection();						
+			$sql 		= $query;
+			$result 	= mysqli_query($conn, $sql);			
+			$value 		= "<select  $names $events $ids $extra $styles $sizes $multiples $tabindex >";
+			$value 	   .= "<option value=\"$default\">- Select One -</option>";
+								while ($row = mysqli_fetch_array($result)){
+									$selected 	= ($values == $row[$optionvalue]) ? "selected" : "";						
+					   				$value .=  "<option value=\"".$row[$optionvalue]."\" $selected>".ucfirst($row[$dbvalue])."</option>";
+								}
+			$value 	   .= "</select>"; 
+ 
+			return $this->returnResult = $value;				 	
+		 }else{
+		 	return $this->returnResult = $value;	
+		 }	
+	}
+	
+	//Button
+	public function button($task='',$id='',$style='',$name='',$value=''){
+			$styles	 	= (!empty($style)) 		? "class=\"$style\"" 				: "";	
+			$ids	 	= (!empty($id)) 		? "id=\"$id\"" 						: "";				 
+			$values		= (!empty($value)) 		? $value							: "";	
+			$names 		= (!empty($name)) 		? "name=\"$name\"" 					: "";
+			
+			if($task!='view'){
+				return $this->returnResult = "<button $ids $styles $values $names tabindex='-1'></button>";				 	
+		 	}else{
+		 		return $this->returnResult = "";	
+		 	}
+	}
+	
+	
+	public function test($query="",$value="",$dbvalue='',$optionvalue='',$optionids=""){
+			
+			$conn 		= $this->getDbConnection();						
+			$sql 		= $query;			
+			$values		= (!empty($value)) ?  $value : "";	
+			//$result 	= mysqli_query($conn, $sql);
+							 
+			$result = mysqli_query($conn,$sql) or die(mysqli_error($conn));
+				 
+						while($row = mysqli_fetch_array($result)){
+							$selected 	= ($values == $row[$optionvalue]) ? "selected" : "";						
+					   		//$value .=  "<option value=\"".$row[$optionvalue]."\"  id=\"".$row[$optionids]."\"  $selected>".stripslashes(ucfirst(str_replace("_","",$row[$dbvalue])))."</option>";
+					   		$value .=  "<option value=\"".$row[$optionvalue]."\"  $selected>".stripslashes(ucfirst(str_replace("_","",$row[$dbvalue])))."</option>";
+						}
+						
+						
+			return $value;
+	}
+	
+	
+	public function select2($query,$value,$dbvalue='',$optionvalue=''){
+			
+			$conn 		= $this->getDbConnection();						
+			$sql 		= $query;			
+			$values		= (!empty($value)) 		? $value	: "";	
+			$result 	= mysqli_query($conn, $sql);			
+		 
+			 
+								while ($row = mysqli_fetch_array($result)){
+									$selected 	= ($values == $row[$optionvalue]) ? "selected" : "";						
+					   				$value .=  "<option value=\"".$row[$optionvalue]."\" $selected>".ucfirst($row[$dbvalue])."</option>";
+								}
+ 
+			
+			return $value;
+	}
+	
+	
+	
+	
+		
+
+}
+?>

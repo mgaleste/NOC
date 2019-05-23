@@ -1,0 +1,2 @@
+[24-Oct-2013 07:54:12] PHP Fatal error:  Cannot redeclare class mPDF in /home/ourwebpr/public_html/arguelles_cid/plugins/mpdf/mpdf.php on line 67
+[24-Oct-2013 07:55:02] PHP Fatal error:  Cannot redeclare class mPDF in /home/ourwebpr/public_html/arguelles_cid/plugins/mpdf/mpdf.php on line 67
